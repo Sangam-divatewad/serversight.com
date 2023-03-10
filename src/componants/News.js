@@ -4,6 +4,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import ScrollToTop from "react-scroll-to-top";
 import { Helmet } from "react-helmet-async";
 import Footer from "./Footer";
+import preconnect from "preconnect";
 export default function News(props) {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
@@ -13,19 +14,21 @@ export default function News(props) {
   document.description = `Top news from ${props.cat} section`;
 
   const options = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      Authorization: 'Basic c2FuZGk6U2FuZGlAMTQz',
-      'X-RapidAPI-Key': '30b7b05d96mshe9a931a5b725a50p1e87bfjsnb764b995436e',
-      'X-RapidAPI-Host': 'news1111.p.rapidapi.com'
-    }
+      Authorization: "Basic c2FuZGk6U2FuZGlAMTQz",
+      "X-RapidAPI-Key": "30b7b05d96mshe9a931a5b725a50p1e87bfjsnb764b995436e",
+      "X-RapidAPI-Host": "news1111.p.rapidapi.com",
+    },
   };
-  
 
   const update = async () => {
     setLoading(true);
     props.setProgress(10);
-    let data = await fetch(`https://news1111.p.rapidapi.com/${props.cat}?${props.cat}=%2F${props.cat} `,options);
+    let data = await fetch(
+      `https://news1111.p.rapidapi.com/${props.cat}?${props.cat}=%2F${props.cat} `,
+      options
+    );
     props.setProgress(40);
     let parsedData = await data.json();
     props.setProgress(80);
@@ -47,7 +50,10 @@ export default function News(props) {
   const fetchMoreData = async () => {
     setPage(page + 1);
     setLoading(true);
-    let data = await fetch(`https://news1111.p.rapidapi.com/${props.cat}?${props.cat}=%2F${props.cat}`,options);
+    let data = new preconnect(
+      `https://news1111.p.rapidapi.com/${props.cat}?${props.cat}=%2F${props.cat}`,
+      options
+    );
     let parsedData = await data.json();
     setArticles(articles.concat(parsedData.articles));
     setTotlaResults(parsedData.totalResults);
@@ -60,8 +66,11 @@ export default function News(props) {
       <div
         className={`container  my-4 bg-${props.mode} text-${props.textMode}`}
       >
-        <h2 style={{fontFamily:"monospace"}} className="mx-4 border-bottom  text-center">
-          Top {props.cat} News..{" "}
+        <h2
+          style={{ fontFamily: "monospace" }}
+          className="mx-4 border-bottom  text-center"
+        >
+          Top {props.cat} Headlines
         </h2>
         <InfiniteScroll
           dataLength={articles.length}
@@ -74,8 +83,19 @@ export default function News(props) {
                 return (
                   <div className="col-md-4" key={element.url}>
                     <Helmet>
-                      <title>{props.cat} top news</title>
-                      <meta name="description" content={element.description} />
+                      <title>
+                        serversight.com - Top {props.cat} Headlines | Today's
+                        Top {props.cat} Headlines, Today's Top News Stories,
+                        Latest News Today
+                      </title>
+                      <meta
+                        property="og:url"
+                        content="https://www.serversight.com/"
+                      />
+                      <meta
+                        name="description"
+                        content="Top News Stories of the day, Latest News Headlines, News Specials, Breaking News and Latest India News, World current affairs &amp; Political News all around the clock at serversight.com."
+                      ></meta>
                     </Helmet>
                     <NewsItem
                       title={element.title}
@@ -90,7 +110,7 @@ export default function News(props) {
                           ? element.image
                           : "https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                       }
-                      alt = {element.title}
+                      alt={element.title}
                       newsurl={element.url}
                       mode={props.mode}
                       textMode={props.textMode}
@@ -102,10 +122,29 @@ export default function News(props) {
               })}
             </div>
             <ScrollToTop color="blue" smooth={true} />
+          
           </div>
         </InfiniteScroll>
       </div>
       <Footer />
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6648729918098505"
+        crossorigin="anonymous"
+        rel="preload"
+        as="script"
+      ></script>
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-format="auto"
+        data-ad-layout-key="-66+by-2l-81+13x"
+        data-ad-client="ca-pub-6648729918098505"
+        data-ad-slot="8782573613"
+      ></ins>
+      <script rel="preload" as="script">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </>
   );
 }

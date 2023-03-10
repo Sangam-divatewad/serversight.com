@@ -5,6 +5,9 @@ import PropTypes from "prop-types";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import { HelmetProvider } from "react-helmet-async";
+import Privacy from "./componants/Privacy";
+import Terms from "./componants/Terms";
+import Contact from "./componants/Contact";
 
 export default function App(props) {
   let apiKey = process.env.REACT_APP_NEWS_API;
@@ -77,6 +80,19 @@ export default function App(props) {
                     setProgress={setProgress}
                     textMode={textMode}
                     apiKey={apiKey}
+                  />
+                }
+              />
+              <Route
+                path="/privacy"
+                element={
+                  <Privacy
+                    key={"privacy"}
+                    cat={"privacy"}
+                    mode={mode}
+                    setProgress={setProgress}
+                    textMode={textMode}
+                  
                   />
                 }
               />
@@ -181,6 +197,28 @@ export default function App(props) {
                     setProgress={setProgress}
                     textMode={textMode}
                     apiKey={apiKey}
+                  />
+                }
+              />
+              <Route
+                path="/terms"
+                element={
+                  <Terms
+                    key={"terms"}
+                    cat={"terms"}
+                    mode={mode}
+                    textMode={textMode}
+                  />
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <Contact
+                    key={"contact"}
+                    cat={"contact"}
+                    mode={mode}
+                    textMode={textMode}
                   />
                 }
               />
