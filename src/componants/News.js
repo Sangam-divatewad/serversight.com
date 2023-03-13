@@ -5,6 +5,7 @@ import ScrollToTop from "react-scroll-to-top";
 import { Helmet } from "react-helmet-async";
 import Footer from "./Footer";
 import preconnect from "preconnect";
+import AdsComponent from "./Ads";
 export default function News(props) {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
@@ -72,6 +73,7 @@ export default function News(props) {
         >
           Top {props.cat} Headlines
         </h2>
+        <AdsComponent dataAdslot="8782573613"/>
         <InfiniteScroll
           dataLength={articles.length}
           next={fetchMoreData}
@@ -88,10 +90,6 @@ export default function News(props) {
                         Top {props.cat} Headlines, Today's Top News Stories,
                         Latest News Today
                       </title>
-                      <meta
-                        property="og:url"
-                        content="https://www.serversight.com/"
-                      />
                       <meta
                         name="description"
                         content="Top News Stories of the day, Latest News Headlines, News Specials, Breaking News and Latest India News, World current affairs &amp; Political News all around the clock at serversight.com."
@@ -117,6 +115,7 @@ export default function News(props) {
                       author={element.author}
                       time={element.publishedAt}
                     />
+                    <AdsComponent dataAdslot="8782573613"/>
                   </div>
                 );
               })}
@@ -127,24 +126,6 @@ export default function News(props) {
         </InfiniteScroll>
       </div>
       <Footer />
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6648729918098505"
-        crossorigin="anonymous"
-        rel="preload"
-        as="script"
-      ></script>
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-format="auto"
-        data-ad-layout-key="-66+by-2l-81+13x"
-        data-ad-client="ca-pub-6648729918098505"
-        data-ad-slot="8782573613"
-      ></ins>
-      <script rel="preload" as="script">
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
     </>
   );
 }

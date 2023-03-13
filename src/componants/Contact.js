@@ -1,4 +1,5 @@
 import React from "react";
+import AdsComponent from "./Ads";
 import Footer from "./Footer";
 
 const Contact = (props) => {
@@ -22,6 +23,7 @@ const Contact = (props) => {
             serversightc@gmail.com
           </a>
         </p>
+      <AdsComponent dataAdslot="8782573613"/>
       </div>
     </div>
     <Footer/>

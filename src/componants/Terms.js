@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AdsComponent from "./Ads";
 import Footer from "./Footer";
 
 const Terms = (props) => {
@@ -29,6 +30,7 @@ const Terms = (props) => {
           license to access, browse, and use the Site. You can use the
           information for non-commercial use only.
         </p>
+        <AdsComponent dataAdslot="8782573613"/>
         <h4 className="mt-2">You may not:</h4>
         <p>
           <ol>
@@ -54,7 +56,7 @@ const Terms = (props) => {
             </li>
           </ol>
         </p>
-
+        <AdsComponent dataAdslot="8782573613"/>
         <p>
           All content Promoted from following official Websites with their
           consent:
@@ -202,6 +204,7 @@ const Terms = (props) => {
             </li>
           </ul>
         </p>
+        <AdsComponent dataAdslot="8782573613"/>
         <h3 className="mt-2">Limited Permission to Copy:</h3>
         <p>
           Serversight.com allows you to only access and makes personal use of
@@ -218,6 +221,7 @@ const Terms = (props) => {
           disseminated in any electronic or non-electronic form without prior
           written permission.
         </p>
+        <AdsComponent dataAdslot="8782573613"/>
         <h3 className="mt-2">No Unlawful or Prohibited Use:</h3>
         <p>
           Continuing on the site, you agree that you will not use the Services
@@ -250,6 +254,7 @@ const Terms = (props) => {
           damage of any nature.
           <br /> <br /> --------------------------- Thank you !
         </p>
+        <AdsComponent dataAdslot="8782573613"/>
       </div>
     </div>
     <Footer/>

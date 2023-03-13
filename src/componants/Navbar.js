@@ -116,67 +116,58 @@ export default function Navbar(props) {
                 </Link>
               </li>
               <li className="nav-item">
-                <li>
-                  <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span style={{fontSize:"1.2rem"}}>More Categories</span>
-                  </button>
-                  <div
-                    class="collapse navbar-collapse"
-                    id="navbarNavDropdown"
-                  >
-                    <ul class="navbar-nav">
-                      <li class="nav-item dropdown">
-                        <button
-                          class={`btn text-${props.textMode} dropdown-toggle`}
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          More Categories
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu">
-                          <li>
-                            <Link className={`dropdown-item `} to="/intresting">
-                              Intresting News
-                            </Link>
-                          </li>
-                          <li>
-                            <Link className={`dropdown-item `} to="/science">
-                              Science News
-                            </Link>
-                          </li>
-                          <li>
-                            <Link className={`dropdown-item `} to="/lifestyle">
-                              Lifestyle News
-                            </Link>
-                          </li>
-                          <li>
-                            <Link className={`dropdown-item `} to="/privacy">
-                              Privacy Policy
-                            </Link>
-                          </li>
-                          <li>
-                            <Link className={`dropdown-item `} to="/terms">
-                              Terms of Use
-                            </Link>
-                          </li>
-                          <li>
-                            <Link className={`dropdown-item `} to="/contact">
-                              Contact Us
-                            </Link>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
+                <Link
+                  className={`nav-link  text-${props.textMode}`}
+                  aria-current="page"
+                  to="/science"
+                >
+                  Science
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link  text-${props.textMode}`}
+                  aria-current="page"
+                  to="/lifestyle"
+                >
+                  Lifestyle
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link  text-${props.textMode}`}
+                  aria-current="page"
+                  to="/intresting"
+                >
+                  Intresting
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link  text-${props.textMode}`}
+                  aria-current="page"
+                  to="/Privacy"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link  text-${props.textMode}`}
+                  aria-current="page"
+                  to="/terms"
+                >
+                  Terms of Use
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link  text-${props.textMode}`}
+                  aria-current="page"
+                  to="/contact"
+                >
+                  Contact Us
+                </Link>
               </li>
             </ul>
           </div>
