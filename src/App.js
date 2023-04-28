@@ -10,7 +10,6 @@ import Terms from "./componants/Terms";
 import Contact from "./componants/Contact";
 
 export default function App(props) {
-  let apiKey = process.env.REACT_APP_NEWS_API;
   const [progress, setProgress] = useState(0);
   const [mode, setMode] = useState("light");
   const [textMode, setTextMode] = useState("black");
@@ -53,7 +52,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />
@@ -66,7 +65,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />
@@ -79,7 +78,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />
@@ -105,7 +104,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />
@@ -118,7 +117,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />
@@ -131,7 +130,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />
@@ -144,7 +143,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />
@@ -157,7 +156,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />
@@ -170,7 +169,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />
@@ -183,7 +182,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />
@@ -196,7 +195,7 @@ export default function App(props) {
                     mode={mode}
                     setProgress={setProgress}
                     textMode={textMode}
-                    apiKey={apiKey}
+                    
                   />
                 }
               />

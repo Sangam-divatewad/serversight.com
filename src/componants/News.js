@@ -5,12 +5,11 @@ import ScrollToTop from "react-scroll-to-top";
 import { Helmet } from "react-helmet-async";
 import Footer from "./Footer";
 import preconnect from "preconnect";
-import AdsComponent from "./Ads";
+
 export default function News(props) {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
   const [totalResults, setTotlaResults] = useState(0);
-  const [loading, setLoading] = useState(false);
 
   document.description = `Top news from ${props.cat} section`;
 
@@ -24,7 +23,6 @@ export default function News(props) {
   };
 
   const update = async () => {
-    setLoading(true);
     props.setProgress(10);
     let data = await fetch(
       `https://news1111.p.rapidapi.com/${props.cat}?${props.cat}=%2F${props.cat} `,
@@ -36,7 +34,6 @@ export default function News(props) {
     setArticles(parsedData.articles);
     setPage(page + 1);
     setTotlaResults(parsedData.totalResults);
-    setLoading(false);
     props.setProgress(100);
   };
 
@@ -50,7 +47,6 @@ export default function News(props) {
 
   const fetchMoreData = async () => {
     setPage(page + 1);
-    setLoading(true);
     let data = new preconnect(
       `https://news1111.p.rapidapi.com/${props.cat}?${props.cat}=%2F${props.cat}`,
       options
@@ -59,7 +55,6 @@ export default function News(props) {
     setArticles(articles.concat(parsedData.articles));
     setTotlaResults(parsedData.totalResults);
     setPage(page + 1);
-    setLoading(false);
   };
 
   return (
@@ -73,7 +68,7 @@ export default function News(props) {
         >
           Top {props.cat} Headlines
         </h2>
-        <AdsComponent dataAdslot="8782573613"/>
+        
         <InfiniteScroll
           dataLength={articles.length}
           next={fetchMoreData}
@@ -115,7 +110,7 @@ export default function News(props) {
                       author={element.author}
                       time={element.publishedAt}
                     />
-                    <AdsComponent dataAdslot="8782573613"/>
+                    
                   </div>
                 );
               })}

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AdsComponent from "./Ads";
 import Footer from "./Footer";
 
 const Privacy = (props) => {
@@ -57,7 +56,7 @@ const Privacy = (props) => {
             </Link>
             .
           </p>
-          <AdsComponent dataAdslot="8782573613"/>
+          
           <h2 className=" mt-2">How do we use this information ?</h2>
           <p className="mt-2">
             Any of the information we collect from you may be used in one of the
@@ -111,7 +110,7 @@ const Privacy = (props) => {
             allows our Website to incorporate content of this kind on its pages.
             Personal Data processed: Cookies; Usage Data. Place of processing:
             United States – Privacy Policy.
-            <AdsComponent dataAdslot="8782573613"/>
+            
             <h2>Analytics...</h2>
             We use third-party tools for audience measurement on our websites.
             The services contained in this section enable us to monitor and
@@ -142,7 +141,7 @@ const Privacy = (props) => {
             </Link>
             .
           </p>
-          <AdsComponent dataAdslot="8782573613"/>
+          
           <h2>Who do we share your data with ?...</h2>
           serversight.com may share or release your information in response to a
           request from a government agency or a private litigant for legal
@@ -178,7 +177,7 @@ const Privacy = (props) => {
             This online privacy policy applies only to information collected
             through our website and not to information collected offline.
           </p>
-          <AdsComponent dataAdslot="8782573613"/>
+          
           <h2 className="mt-2">The Rights of Users</h2>
           <p>
             Users may exercise certain rights regarding their Data processed by

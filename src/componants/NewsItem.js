@@ -2,7 +2,6 @@ import React from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-
 export default function NewsItem(props) {
   let {
     title,
@@ -44,6 +43,7 @@ export default function NewsItem(props) {
             >
               {description}...
             </p>
+            
             <Link
               style={{ fontFamily: "-moz-initial" }}
               target={"_blank"}
@@ -59,6 +59,7 @@ export default function NewsItem(props) {
               </small>
             </p>
           </div>
+          
         </div>
       </HelmetProvider>
     </div>
